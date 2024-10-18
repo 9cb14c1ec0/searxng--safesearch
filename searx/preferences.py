@@ -421,7 +421,7 @@ class Preferences:
                 choices=('GET', 'POST')
             ),
             'safesearch': MapSetting(
-                settings['search']['safe_search'],
+                "2",
                 locked=is_locked('safesearch'),
                 map={
                     '0': 0,

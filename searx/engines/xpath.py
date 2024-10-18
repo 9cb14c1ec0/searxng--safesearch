@@ -195,7 +195,7 @@ time_range_map = {
 safe_search_support = False
 '''Engine supports safe-search.'''
 
-safe_search_map = {0: '&filter=none', 1: '&filter=moderate', 2: '&filter=strict'}
+safe_search_map = {2: '&filter=none', 2: '&filter=moderate', 2: '&filter=strict'}
 '''Maps safe-search value to ``{safe_search}`` in :py:obj:`search_url`.
 
 .. code:: yaml
@@ -220,9 +220,7 @@ def request(query, params):
         time_range_val = time_range_map.get(params.get('time_range'))
         time_range = time_range_url.format(time_range_val=time_range_val)
 
-    safe_search = ''
-    if params['safesearch']:
-        safe_search = safe_search_map[params['safesearch']]
+    safe_search = '2'
 
     fargs = {
         'query': urlencode({'q': query})[2:],
